@@ -7,4 +7,5 @@ AI_Medical_Chatbot.egg-info/requires.txt
 AI_Medical_Chatbot.egg-info/top_level.txt
 src/__init__.py
 src/custom_exception.py
+src/doctor_brain.py
 src/logger.py
