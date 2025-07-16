@@ -39,5 +39,34 @@
 
 ## Technical Architecture
 
+<img width="1495" height="1333" alt="diagram-export-7-17-2025-1_27_28-AM" src="https://github.com/user-attachments/assets/16bb78fa-0d28-4eae-aa29-b4590de7ba71" />
+
+---
+
+## How It Works
+
+1. **User speaks or uploads an image** via the Gradio UI.
+2. **Voice input is transcribed** to text using Whisper.
+3. **Image and text** are processed by the multimodal LLM (Llama 3 Vision).
+4. **AI generates response** as text.
+5. **Doctor's response is converted to voice** using TTS and played back.
+6. **All interaction happens in a web UI** (Gradio).
+
+---
+
+## Tools and Technologies
+
+- **Groq** for AI Inference
+- **OpenAI Whisper** for transcription
+- **Llama 3 Vision** for multimodal understanding
+- **gTTS & ElevenLabs** for speech synthesis
+- **Gradio** for UI
+- **Python, VS Code**
+
+---
+
+## ⭐ Support
+
+If you like this project, please give it a star!
 
 
