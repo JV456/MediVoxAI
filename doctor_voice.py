@@ -53,43 +53,53 @@ from elevenlabs.client import ElevenLabs
 
 
 
-def text_to_speech_with_gtts(input_text, output_filepath):
-    language = 'en-in'
+# def text_to_speech_with_gtts(input_text, output_filepath):
+#     language = 'en'
     
+#     audioobj = gTTS(
+#         text=input_text,
+#         lang=language,
+#         slow=False
+#     )
+#     audioobj.save(output_filepath)
+#     os_name = platform.system()
+#     try:
+#         if os_name == "Darwin":
+#             subprocess.run(['afplay', output_filepath])
+#         elif os_name == "Windows":
+#             if output_filepath.endswith('.mp3'):
+#                 # Use Windows Media Player for MP3 files
+#                 subprocess.run(['powershell', '-c', f'Add-Type -AssemblyName presentationCore; $mediaPlayer = New-Object system.windows.media.mediaplayer; $mediaPlayer.open([uri]::new((Resolve-Path "{output_filepath}"))); $mediaPlayer.Play(); Start-Sleep 10'])
+#             else:
+#                 # Use SoundPlayer for WAV files
+#                 subprocess.run(['powershell', '-c', f'(New-Object Media.SoundPlayer "{output_filepath}").PlaySync();'])
+#         elif os_name == "Linux":
+#             subprocess.run(['aplay', output_filepath])
+#         else:
+#             raise OSError("Unsupported operating system")
+#     except Exception as e:
+#         print(f"An error occurred while trying to play the audio: {e}")
+
+
+def text_to_speech_with_gtts(input_text, output_filepath):
+    language = 'en'
     audioobj = gTTS(
         text=input_text,
         lang=language,
         slow=False
     )
     audioobj.save(output_filepath)
-    os_name = platform.system()
-    try:
-        if os_name == "Darwin":  # macOS
-            subprocess.run(['afplay', output_filepath])
-        elif os_name == "Windows":  # Windows
-            if output_filepath.endswith('.mp3'):
-                # Use Windows Media Player for MP3 files
-                subprocess.run(['powershell', '-c', f'Add-Type -AssemblyName presentationCore; $mediaPlayer = New-Object system.windows.media.mediaplayer; $mediaPlayer.open([uri]::new((Resolve-Path "{output_filepath}"))); $mediaPlayer.Play(); Start-Sleep 10'])
-            else:
-                # Use SoundPlayer for WAV files
-                subprocess.run(['powershell', '-c', f'(New-Object Media.SoundPlayer "{output_filepath}").PlaySync();'])
-        elif os_name == "Linux":  # Linux
-            subprocess.run(['aplay', output_filepath])
-        else:
-            raise OSError("Unsupported operating system")
-    except Exception as e:
-        print(f"An error occurred while trying to play the audio: {e}")
+    return output_filepath
     
-input_text = "Hello, this is jai testing the text-to-speech functionality with gTTS."
+    
+# input_text = "Hello, this is jai testing the text-to-speech functionality with gTTS."
 
-text_to_speech_with_gtts(input_text=input_text, output_filepath="gtts_testing_autoplay.mp3")
+# text_to_speech_with_gtts(input_text=input_text, output_filepath="gtts_testing_autoplay.mp3")
 
 
 
 ## Text-to-Speech with ElevenLabs
 
-import elevenlabs
-from elevenlabs.client import ElevenLabs
 
 ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
 

@@ -20,7 +20,7 @@ six==1.17.0
 [:python_version >= "3.10"]
 gradio==5.12.0
 gradio-client==1.5.4
-numpy==2.2.1
+numpy>=2.2.1
 safehttpx==0.1.6
 
 [:python_version >= "3.6"]

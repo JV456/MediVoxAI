@@ -1,9 +1,10 @@
 import logging
-import speech_recognition as sr
-import lameenc
-import wave
-import tempfile
 import os
+import tempfile
+import wave
+
+import lameenc
+import speech_recognition as sr
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -60,19 +61,23 @@ def record_audio(file_path, timeout=20, phrase_time_limit=None):
         logging.error(f"Error during audio recording: {e}")
 
 audio_filepath = "patient_voice_test_for_patient.mp3"
-record_audio(file_path=audio_filepath)
+# record_audio(file_path=audio_filepath)
 
 
 import os
+
 from groq import Groq
 
 GROQ_API_KEY=os.environ.get("GROQ_API_KEY")
-client=Groq(api_key=GROQ_API_KEY)
 stt_model="whisper-large-v3"
-audio_file=open(audio_filepath, "rb")
-transcription=client.audio.transcriptions.create(
-        model=stt_model,
-        file=audio_file,
-        language="en"
-    )
-print(transcription.text)
+
+def transcribe_with_groq(stt_model, audio_filepath, GROQ_API_KEY):
+    client=Groq(api_key=GROQ_API_KEY)
+    
+    audio_file=open(audio_filepath, "rb")
+    transcription=client.audio.transcriptions.create(
+            model=stt_model,
+            file=audio_file,
+            language="en"
+        )
+    return transcription.text
