@@ -1,6 +1,7 @@
 # MediVoxAI 🩺🤖
 
 **MediVoxAI** is a next-generation Medical Chatbot powered by a Multimodal Large Language Model (LLM) with both Vision and Voice capabilities. MediVoxAI can converse with patients, understand spoken questions, analyze medical images, and respond with empathetic and informative answers — making healthcare assistance more accessible and interactive.
+**LINK:** https://huggingface.co/spaces/jv456/MediVoxAI
 
 ---
 
