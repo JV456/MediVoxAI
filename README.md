@@ -65,6 +65,12 @@
 
 ---
 
+## Output
+
+<img width="1643" height="865" alt="Screenshot 2025-07-17 105312" src="https://github.com/user-attachments/assets/cdfdb340-e235-4ba3-a6fa-f00bc1024171" />
+
+---
+
 ## ⭐ Support
 
 If you like this project, please give it a star!
